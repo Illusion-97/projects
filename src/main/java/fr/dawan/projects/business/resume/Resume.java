@@ -1,7 +1,9 @@
-package fr.dawan.projects.business.personne;
+package fr.dawan.projects.business.resume;
 
+import fr.dawan.projects.business.dossier_projet.DossierProjet;
 import fr.dawan.projects.generic.BaseEntity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +17,9 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "etudiant")
-public class Personne extends BaseEntity {
-    private String nom;
-    private String prenom;
-    private boolean active;
+public class Resume extends BaseEntity {
+    private Langue langue;
+    private String texte;
+    @ManyToOne
+    private DossierProjet dossier;
 }

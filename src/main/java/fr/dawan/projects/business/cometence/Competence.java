@@ -1,4 +1,4 @@
-package fr.dawan.projects.business.personne;
+package fr.dawan.projects.business.cometence;
 
 import fr.dawan.projects.generic.BaseEntity;
 import jakarta.persistence.Entity;
@@ -15,9 +15,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "etudiant")
-public class Personne extends BaseEntity {
+public class Competence extends BaseEntity {
     private String nom;
-    private String prenom;
-    private boolean active;
 }
