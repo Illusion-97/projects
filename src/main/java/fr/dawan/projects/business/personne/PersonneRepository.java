@@ -1,4 +1,4 @@
-package fr.dawan.projects.business.projet.personne;
+package fr.dawan.projects.business.personne;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

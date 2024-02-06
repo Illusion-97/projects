@@ -1,4 +1,4 @@
-package fr.dawan.projects.business.projet.personne;
+package fr.dawan.projects.business.personne;
 
 import fr.dawan.projects.generic.BaseEntity;
 import lombok.AllArgsConstructor;
