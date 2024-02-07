@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/annexes")
+@RequestMapping("api/v1/annexes")
 public class AnnexeRestController extends AbstractGenericRestController<AnnexeDto, AnnexeService> {
     public AnnexeRestController(AnnexeService service) {
         super(service);

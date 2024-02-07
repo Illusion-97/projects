@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/competences")
+@RequestMapping("api/v1/competences")
 public class CompetenceRestController extends AbstractGenericRestController<CompetenceDto, CompetenceService> {
     public CompetenceRestController(CompetenceService service) {
         super(service);

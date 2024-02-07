@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/resumes")
+@RequestMapping("api/v1/resumes")
 public class ResumeRestController extends AbstractGenericRestController<ResumeDto, ResumeService> {
     public ResumeRestController(ResumeService service) {
         super(service);

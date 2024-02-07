@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" th:replace="~{fragments/general.html :: htmlContent('Projects Home', ~{ :: .body-content})}">
+<section class="body-content" th:remove="tag">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="element : ${elements}">
+                <td th:text="${element.nom}"></td>
+                <td th:text="${element.prenom}"></td>
+                <td style="display: flex; gap: 5px; justify-content: end">
+                    <a class="button primary">Editer</a>
+                    <a class="button primary">Supprimer</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td><a class="button primary">Nouveau</a></td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</section>
+</html>

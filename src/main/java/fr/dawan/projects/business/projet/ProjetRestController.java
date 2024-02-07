@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projets")
+@RequestMapping("api/v1/projets")
 public class ProjetRestController extends AbstractGenericRestController<ProjetDto, ProjetService> {
     public ProjetRestController(ProjetService service) {
         super(service);
