@@ -1,6 +1,6 @@
 package fr.dawan.projects.business.projet;
 
-import fr.dawan.projects.business.cometence.CompetenceDto;
+import fr.dawan.projects.business.competence.CompetenceDto;
 import fr.dawan.projects.business.personne.PersonneDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package fr.dawan.projects.business.cometence;
+package fr.dawan.projects.business.competence;
 
 import fr.dawan.projects.generic.GenericMapper;
 import org.mapstruct.Mapper;

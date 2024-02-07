@@ -1,6 +1,6 @@
 package fr.dawan.projects.business.projet;
 
-import fr.dawan.projects.business.cometence.Competence;
+import fr.dawan.projects.business.competence.Competence;
 import fr.dawan.projects.business.personne.Personne;
 import fr.dawan.projects.generic.BaseEntity;
 import jakarta.persistence.ElementCollection;
