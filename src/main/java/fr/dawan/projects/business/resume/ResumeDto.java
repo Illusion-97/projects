@@ -14,5 +14,5 @@ public class ResumeDto {
     private int version;
     private Langue langue;
     private String texte;
-    private DossierProjetDto dossier;
+    private long dossierId;
 }
