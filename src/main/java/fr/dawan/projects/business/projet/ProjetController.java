@@ -32,6 +32,11 @@ public class ProjetController extends AbstractController<ProjetDto, ProjetServic
         return super.findById(id, model);
     }
 
+    @Override
+    protected ProjetDto getDTO() {
+        return new ProjetDto();
+    }
+
     @GetMapping("addContent/{id}")
     public String ajouterContenu(@PathVariable long id) {
         service.addContent(id);

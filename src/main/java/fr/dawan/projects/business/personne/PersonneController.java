@@ -11,4 +11,9 @@ public class PersonneController extends AbstractController<PersonneDto, Personne
     public PersonneController(PersonneService service) {
         super("etudiants", service);
     }
+
+    @Override
+    protected PersonneDto getDTO() {
+        return new PersonneDto();
+    }
 }

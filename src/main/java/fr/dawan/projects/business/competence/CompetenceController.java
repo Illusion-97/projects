@@ -11,4 +11,9 @@ public class CompetenceController extends AbstractController<CompetenceDto, Comp
     public CompetenceController(CompetenceService service) {
         super("competences", service);
     }
+
+    @Override
+    protected CompetenceDto getDTO() {
+        return new CompetenceDto();
+    }
 }

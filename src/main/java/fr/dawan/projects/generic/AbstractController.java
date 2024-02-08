@@ -24,7 +24,7 @@ public abstract class AbstractController<D,S extends GenericService<D>> {
     @GetMapping("{id}")
     public String findById(@PathVariable long id, Model model) {
         // Model permet la transmission d'informations entre le programme et le template
-        model.addAttribute("element", service.findById(id).orElseThrow());
+        model.addAttribute("element", service.findById(id).orElseGet(this::getDTO));
         return path + "/byId";
     }
 
@@ -44,4 +44,6 @@ public abstract class AbstractController<D,S extends GenericService<D>> {
     public String getPath() {
         return path;
     }
+
+    protected abstract D getDTO(); // une methode abstraite force les classe qui étendent celle-ci à fournir le code nécessaire
 }

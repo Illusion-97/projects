@@ -11,4 +11,9 @@ public class DossierProjetController extends AbstractController<DossierProjetDto
     public DossierProjetController(DossierProjetService service) {
         super("dossiers", service);
     }
+
+    @Override
+    protected DossierProjetDto getDTO() {
+        return new DossierProjetDto();
+    }
 }

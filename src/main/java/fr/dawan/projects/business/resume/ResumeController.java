@@ -11,4 +11,9 @@ public class ResumeController extends AbstractController<ResumeDto, ResumeServic
     public ResumeController(ResumeService service) {
         super("resumes", service);
     }
+
+    @Override
+    protected ResumeDto getDTO() {
+        return new ResumeDto();
+    }
 }
