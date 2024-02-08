@@ -6,14 +6,14 @@
             <tbody th:replace="${table}">
             <tr>
                 <td th:fragment="actions(id)" style="display: flex; gap: 5px; justify-content: end">
-                    <a class="button primary">Editer</a>
+                    <a th:href="${#strings.concat('/',path,'/',id)}" class="button primary">Editer</a>
                     <a th:href="'/'+${path}+'/remove/'+${id}" class="button primary">Supprimer</a>
                 </td>
             </tr>
             </tbody>
             <tfoot>
             <tr>
-                <td><a class="button primary">Nouveau</a></td>
+                <td><a th:href="${#strings.concat('/',path,'/0')}" class="button primary">Nouveau</a></td>
             </tr>
             </tfoot>
         </table>

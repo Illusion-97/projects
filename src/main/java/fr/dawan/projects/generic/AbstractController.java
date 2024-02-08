@@ -20,6 +20,13 @@ public abstract class AbstractController<D,S extends GenericService<D>> {
         return path + "/all";
     }
 
+    @GetMapping("{id}")
+    public String findById(@PathVariable long id, Model model) {
+        // Model permet la transmission d'informations entre le programme et le template
+        model.addAttribute("element", service.findById(id).orElseThrow());
+        return path + "/byId";
+    }
+
     @GetMapping("/remove/{id}")
     public String delete(@PathVariable long id) {
         service.deleteById(id);

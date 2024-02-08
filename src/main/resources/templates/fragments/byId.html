@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" th:fragment="byId(form)" th:replace="~{fragments/general.html :: htmlContent('Projects ById',~{ :: .body-content})}">
+<section class="body-content" th:remove="tag">
+    <form method="post" th:object="${element}">
+        <div class="row gtr-uniform">
+            <input type="hidden" name="id" th:field="*{id}">
+            <input type="hidden" name="version" th:field="*{version}">
+            <div th:replace="${form}"></div>
+            <div>
+                <ul class="actions">
+                    <li><input type="submit" value="Enregistrer" class="primary"></li>
+                    <li><input type="reset" value="Reset"></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</section>
+</html>
