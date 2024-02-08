@@ -11,18 +11,24 @@
         <div class="col-6 col-12-xsmall">
             <label>
                 Competences :
-                <select name="competences" th:field="*{competences}" required multiple>
-                    <option th:each="comp : ${comps}" th:text="${comp.nom}" th:value="${comp.id}"></option>
-                </select>
             </label>
+                <ul style="max-height: 10vh; overflow: auto">
+                    <li class="row" style="list-style-type: none; border-bottom: 1px gray solid; align-items: center" th:each="comp : ${comps}">
+                        <input style="appearance: auto; -moz-appearance: auto; opacity: 1; margin: 0; vertical-align: middle; height: 0.9em;" type="checkbox" th:id="'c'+${{comp}}" th:value="${{comp}}" th:field="*{competences}"/>
+                        <label style="margin: 0" th:for="'c'+${{comp}}" th:text="${comp.nom}"></label>
+                    </li>
+                </ul>
         </div>
         <div class="col-6 col-12-xsmall">
             <label>
                 Participants :
-                <select name="participants" th:field="*{participants}" required multiple>
-                    <option th:each="etudiant : ${etudiants}" th:text="${etudiant.nom}" th:value="${etudiant.id}"></option>
-                </select>
             </label>
+            <ul style="max-height: 10vh; overflow: auto">
+                <li class="row" style="list-style-type: none; border-bottom: 1px gray solid; align-items: center" th:each="student : ${etudiants}">
+                    <input style="appearance: auto; -moz-appearance: auto; opacity: 1; margin: 0; vertical-align: middle; height: 0.9em;" type="checkbox" th:id="'p'+${{student}}" th:value="${{student}}" th:field="*{participants}"/>
+                    <label style="margin: 0" th:for="'p'+${{student}}" th:text="${student.nom}"></label>
+                </li>
+            </ul>
         </div>
 
         <div class="col-12">

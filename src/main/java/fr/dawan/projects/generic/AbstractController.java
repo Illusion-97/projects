@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @RequiredArgsConstructor
 public abstract class AbstractController<D,S extends GenericService<D>> {
@@ -25,6 +26,12 @@ public abstract class AbstractController<D,S extends GenericService<D>> {
         // Model permet la transmission d'informations entre le programme et le template
         model.addAttribute("element", service.findById(id).orElseThrow());
         return path + "/byId";
+    }
+
+    @PostMapping
+    public String saveOrUpdate(@ModelAttribute("element") D dto) {
+        service.saveOrUpdate(dto);
+        return "redirect:/"+path;
     }
 
     @GetMapping("/remove/{id}")

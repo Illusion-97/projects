@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="fr" th:fragment="byId(form)" th:replace="~{fragments/general.html :: htmlContent('Projects ById',~{ :: .body-content})}">
 <section class="body-content" th:remove="tag">
-    <form method="post" th:object="${element}">
+    <form method="post"  th:action="'/'+${path}" th:object="${element}">
         <div class="row gtr-uniform">
             <input type="hidden" name="id" th:field="*{id}">
             <input type="hidden" name="version" th:field="*{version}">

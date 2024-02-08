@@ -1,12 +1,12 @@
 package fr.dawan.projects.business.competence;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(of = {"id"})
 public class CompetenceDto {
     private long id;
     private int version;
