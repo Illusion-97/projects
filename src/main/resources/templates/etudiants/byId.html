@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" th:replace="~{fragments/byId.html :: byId(~{ :: form})}">
+    <form th:remove="tag">
+        <div class="col-6 col-12-xsmall">
+            <label>
+                Nom :
+                <input type="text" name="nom" placeholder="Otto" th:field="*{nom}">
+            </label>
+        </div>
+        <div class="col-6 col-12-xsmall">
+            <label>
+                Prénom :
+                <input type="text" name="prenom" placeholder="Wired" th:field="*{prenom}">
+            </label>
+        </div>
+    </form>
+</html>
