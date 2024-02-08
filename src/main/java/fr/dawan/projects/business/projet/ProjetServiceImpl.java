@@ -26,4 +26,12 @@ public class ProjetServiceImpl extends AbstractGenericService<Projet, ProjetDto,
             repository.saveAndFlush(existing);
         });
     }
+
+    @Override
+    public void removeContent(long id, int position) {
+        repository.findById(id).ifPresent(existing -> {
+            existing.getContenus().remove(position);
+            repository.saveAndFlush(existing);
+        });
+    }
 }

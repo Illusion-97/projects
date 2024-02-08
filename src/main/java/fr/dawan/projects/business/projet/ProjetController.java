@@ -4,6 +4,7 @@ import fr.dawan.projects.business.competence.CompetenceService;
 import fr.dawan.projects.business.personne.PersonneService;
 import fr.dawan.projects.generic.AbstractController;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,8 +38,9 @@ public class ProjetController extends AbstractController<ProjetDto, ProjetServic
         return "redirect:/projets/"+id;
     }
 
-    public String supprimerContenu(long id) {
-
+    @GetMapping("removeContent/{id}/{position}")
+    public String supprimerContenu(@PathVariable long id, @PathVariable int position) {
+        service.removeContent(id,position);
         return "redirect:/projets/"+id;
     }
 }

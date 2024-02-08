@@ -4,4 +4,5 @@ import fr.dawan.projects.generic.GenericService;
 
 public interface ProjetService extends GenericService<ProjetDto> {
     void addContent(long id);
+    void removeContent(long id, int position);
 }
