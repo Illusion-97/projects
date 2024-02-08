@@ -24,5 +24,14 @@
                 </select>
             </label>
         </div>
+
+        <div class="col-12">
+            <label>Contenus :</label>
+            <div th:each="contenu, stats : *{contenus}" style="position: relative">
+                <a class="button small primary" style="position: absolute; right: 0; padding: 0; aspect-ratio: 1">X</a>
+                <textarea style="margin-bottom: 1em" name="contenu" rows="4" th:field="*{contenus[__${stats.index}__]}"></textarea>
+            </div>
+            <a class="button small primary" th:href="${#strings.concat('/',path,'/addContent/',element.id)}">Ajouter</a>
+        </div>
     </form>
 </html>

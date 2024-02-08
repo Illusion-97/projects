@@ -30,4 +30,15 @@ public class ProjetController extends AbstractController<ProjetDto, ProjetServic
         model.addAttribute("etudiants", personneService.findAll(Pageable.unpaged()));
         return super.findById(id, model);
     }
+
+    @GetMapping("addContent/{id}")
+    public String ajouterContenu(@PathVariable long id) {
+        service.addContent(id);
+        return "redirect:/projets/"+id;
+    }
+
+    public String supprimerContenu(long id) {
+
+        return "redirect:/projets/"+id;
+    }
 }
