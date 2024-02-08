@@ -4,13 +4,17 @@
             <thead>
             <tr>
                 <th>Nom</th>
-                <th>Prénom</th>
+                <th>Nb. Contenus</th>
+                <th>Nb. Competences</th>
+                <th>Nb. Participants</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="element : ${elements}">
                 <td th:text="${element.nom}"></td>
-                <td th:text="${element.prenom}"></td>
+                <td th:text="${#lists.size(element.contenus)}"></td>
+                <td th:text="${element.competences.size}"></td>
+                <td th:text="${#lists.size(element.participants)}"></td>
                 <td th:replace="~{fragments/all.html :: actions()}">
                 </td>
             </tr>

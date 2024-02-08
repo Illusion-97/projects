@@ -4,13 +4,11 @@
             <thead>
             <tr>
                 <th>Nom</th>
-                <th>Prénom</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="element : ${elements}">
                 <td th:text="${element.nom}"></td>
-                <td th:text="${element.prenom}"></td>
                 <td th:replace="~{fragments/all.html :: actions()}">
                 </td>
             </tr>
