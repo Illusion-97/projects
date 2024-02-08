@@ -9,7 +9,7 @@
             <tbody>
             <tr th:each="element : ${elements}">
                 <td th:text="${element.nom}"></td>
-                <td th:replace="~{fragments/all.html :: actions()}">
+                <td th:replace="~{fragments/all.html :: actions(${element.id})}">
                 </td>
             </tr>
             </tbody>
