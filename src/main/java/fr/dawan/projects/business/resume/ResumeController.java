@@ -20,6 +20,12 @@ public class ResumeController extends AbstractController<ResumeDto, ResumeServic
         return new ResumeDto();
     }
 
+    @Override
+    public String saveOrUpdate(ResumeDto dto) {
+        service.saveOrUpdate(dto);
+        return "redirect:/dossiers/" + dto.getDossierId();
+    }
+
     @GetMapping("byDossierAndLangue/{dossierId}/{langue}")
     public String getByDossierAndLangue(@PathVariable long dossierId, @PathVariable Langue langue, Model model) {
         model.addAttribute("element", service.findByDossier_IdAndLangue(dossierId,langue));
