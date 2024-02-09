@@ -37,7 +37,7 @@ public class AnnexeServiceImpl extends AbstractGenericService<Annexe, AnnexeDto,
     @Override
     public Annexe saveFile(MultipartFile file, String fileName) {
         try {
-            Annexe annexe = new Annexe(fileName, getExtension(file.getName()), file.getContentType());
+            Annexe annexe = new Annexe(fileName, getExtension(fileName), file.getContentType());
             annexe = repository.saveAndFlush(annexe);
             Path targetLocation = apiFilePath.resolve(annexe.getId() +"." + annexe.getExtension()); // C:/shared/filename
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);

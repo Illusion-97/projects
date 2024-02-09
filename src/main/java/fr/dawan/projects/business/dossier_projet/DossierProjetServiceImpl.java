@@ -19,7 +19,7 @@ public class DossierProjetServiceImpl extends AbstractGenericService<DossierProj
 
     @Override
     public void addAnnexe(long dossierId, MultipartFile file) {
-        String name = file.getName();
+        String name = file.getOriginalFilename();
         repository.findById(dossierId).ifPresent(existing -> {
             Annexe annexe = annexeService.saveFile(file,name);
             existing.getAnnexes().add(annexe);

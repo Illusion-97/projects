@@ -19,8 +19,9 @@
                 <tr th:each="annexe : ${element.annexes}">
                     <td th:text="${annexe.id}"></td>
                     <td th:text="${annexe.name}"></td>
-                    <td th:text="${annexe.extension}"></td>
-                    <td></td>
+                    <td th:text="${annexe.type}"></td>
+                    <td>
+                    </td>
                     <td>
                         <a class="button primary">Télécharger</a>
                         <a class="button primary">Supprimer</a>
