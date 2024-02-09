@@ -7,7 +7,11 @@ import fr.dawan.projects.generic.AbstractController;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
 
@@ -29,6 +33,12 @@ public class DossierProjetController extends AbstractController<DossierProjetDto
         model.addAttribute("etudiants", personneService.findAll(Pageable.unpaged()));
         model.addAttribute("langues", Arrays.stream(Langue.values()).map(Enum::name));
         return super.findById(id, model);
+    }
+
+    @PostMapping("addAnnexe/{dossierId}")
+    public String addAnnexe(@PathVariable long dossierId, @RequestParam MultipartFile file) {
+        service.addAnnexe(dossierId, file);
+        return "redirect:/dossiers/"+dossierId;
     }
 
     @Override

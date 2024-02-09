@@ -14,5 +14,7 @@
             </div>
         </div>
     </form>
+
+    <div th:if="*{id} != 0 && ${path} == 'dossiers'" th:replace="~{fragments/annexe.html :: annexes(${element})}"></div>
 </section>
 </html>

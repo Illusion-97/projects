@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="annexes(element)" th:remove="tag">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Type</th>
+                    <th>Aperçu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="annexe : ${element.annexes}">
+                    <td th:text="${annexe.id}"></td>
+                    <td th:text="${annexe.name}"></td>
+                    <td th:text="${annexe.extension}"></td>
+                    <td></td>
+                    <td>
+                        <a class="button primary">Télécharger</a>
+                        <a class="button primary">Supprimer</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <form th:action="${#strings.concat('/',path,'/addAnnexe/',element.id)}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file">
+            <input type="submit" class="button primary" value="Ajouter">
+        </form>
+    </div>
+</body>
+</html>
