@@ -21,9 +21,11 @@
                     <td th:text="${annexe.name}"></td>
                     <td th:text="${annexe.type}"></td>
                     <td>
+                        <img style="height: 50px; aspect-ratio: 1" th:if="${#strings.contains(annexe.type,'image')}" th:src="${#strings.concat('/files/',annexe.id,'.',annexe.extension)}" th:alt="${annexe.name}">
+                        <span th:unless="${#strings.contains(annexe.type,'image')}">Apperçu indisponible</span>
                     </td>
                     <td>
-                        <a class="button primary">Télécharger</a>
+                        <a th:href="${#strings.concat('/files/',annexe.id,'.',annexe.extension)}" class="button primary" download>Télécharger</a>
                         <a class="button primary">Supprimer</a>
                     </td>
                 </tr>
