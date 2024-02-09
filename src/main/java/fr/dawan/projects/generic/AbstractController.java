@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @RequiredArgsConstructor
 public abstract class AbstractController<D,S extends GenericService<D>> {
-    private final String path;
+    protected final String path;
     protected final S service;
 
 

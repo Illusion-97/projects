@@ -3,9 +3,31 @@
     <form th:remove="tag">
             <div class="col-12">
                 <label>
-                    Nom de Compétence
-                    <input type="text" name="nom" placeholder="Conception de templates Thymeleaf" th:field="*{nom}">
+                    Année :
+                    <input th:field="*{annee}" type="text" name="annee">
                 </label>
             </div>
+        <div class="col-6 col-12-xsmall">
+            <label>
+                Projet :
+                <select th:field="*{projet.id}">
+                    <option th:each="projet : ${projets}" th:value="${projet.id}" th:text="${projet.nom}"></option>
+                </select>
+            </label>
+        </div>
+        <div class="col-6 col-12-xsmall">
+            <label>
+                Candidat :
+                <select th:field="*{candidat}">
+                    <option th:each="etudiant : ${etudiants}" th:value="${{etudiant}}" th:text="${etudiant.nom}"></option>
+                </select>
+            </label>
+        </div>
+        <div th:if="*{id} != 0" class="col-6 col-12-xsmall">
+            <label>
+                Liens (Resumés) :
+                <a th:href="${#strings.concat('/resumes/byDossierAndLangue/',element.id,'/',langue)}" class="button" th:each="langue : ${langues}" th:text="'Resume ' + ${langue}"></a>
+            </label>
+        </div>
     </form>
 </html>
